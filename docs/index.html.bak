@@ -69,12 +69,15 @@
                     <span class="col-7 justify-content-center" style="display: inline-flex">
                         <div style="vertical-align:text-top">
                             <h1 style="text-align: center">Hi there! I'm Alex Zhu</h1>
-                            <h3 style="text-align: center"><br>I'm a grade 11 student at William Lyon Mackenzie CI, who's interested in math, science and computer science. </h3>							
+                            <h3 style="text-align: center"><br>I'm a grade 10 student enrolled in the course ICS4U0</h3>
                         </div>
                     </span>
                     <span class="col-4 justify-content-center" style="display: inline-flex; vertical-align: text-top">
                         <img class="img-fluid" style="width: 400px" src="assets/img/homeImg/portrait.png" alt="Portrait" />
                     </span>
+
+                    <p>This website is to portrait the content and my learning throughout this course. The topics we explain are <a href="OOP.html">object-oreintated programming</a>, <a href="Arrays.html">arrays and sorting</a> and <a href="Recursion.html">recursion</a></p>
+
                     <span class="col-6 justify-content-center" style="display: inline-flex; vertical-align: text-top">
                         <img class="img-fluid" style="width: 85%" src="assets/img/homeImg/math.png" alt="UML diagram structure" />
                     </span>
@@ -85,34 +88,6 @@
                     </span>
                     <p>My involvement with maths goes further than just learning since I also spend time volunteering and helping out with these topics. Every week, I volunteer every weekend to mark math homework in an extracurricular maths school. Other than math and programming, I love sports, such as badminton and tennis. Currently, I compete on our school’s badminton team. Whenever I have free time, I love to spend time with my family, playing badminton with them or watching TV together. In the future, I would like to pursue a career in engineering or math-based research.</p>
                     
-					
-					
-                    <h2 class="section-heading">Projects</h2>
-                    <h4><a href="https://github.com/Buddhathe18th/ICS4UO_Culminating">A Race Against Time</a></h4>
-                    A Race Against Time is a game created by Lukas Li and I for our ICS4UO final projecet. Our game is greated using only Java, covering a variety of different topics such as 
-                    GUI with the Java Swing package, and backend using Java. This game is targeted to younger children, teaching them essential concepts of time management and prioritization.
-                    This game taught as a lot about the technicalities of Java, but also how to create appealing and clean graphics. <br><br>
-
-                    <div style="align-items: center;
-                    justify-content: center;display: flex;"><img class="img-fluid" style="max-width: 400px;" src="assets/img/homeImg/raceAgainstTime.png"></div>
-
-                    <h4><a href="https://github.com/Buddhathe18th/Focusfy">Focusfy</a></h4>
-                    Focusfy is a productivity app created by Raymond Ouyang, Sean Zhao and I as our final project for our ICS3UP course. This application contains many tools, such as 
-                    calendars, checklists, taskboards and timers to keep the user on track of their goals. This project was made out of HTML, CSS and Javascript, allowing us to 
-                    familiarize ourselves with these langauges. This project marked the beginning of our web-developing journeys, as we understood more and more of backend and frontend development.
-                    <br><br>
-                    <div style="align-items: center;
-                    justify-content: center;display: flex;"><img class="img-fluid" style="max-width: 400px;" src="assets/img/Focusfy.png"></div>
-
-<h4><a href="https://github.com/Buddhathe18th/Inbot">Inbot</a></h4>
-Inbot is a Discord bot created by Glen Lin, Sean Zhao, Felix Zhao and me that ultilizes Python and the Gmail API to centralize messages in both 
-Discord and Gmail. A practical application, one that we still use today, creates a more efficient and focused work experience. This project gave us lots more expirience in
-Python, and the security Google takes to ensure no information is leaked. I expiriecned a lot of practical web-security details such as how to safely change and access security tokens.
-<br><br>
-<div style="align-items: center;
-justify-content: center;display: flex;"><img class="img-fluid" style="max-width: 400px;" src="assets/img/Inbot.png"></div>
-
-
                   
                 </div>
             </div>
@@ -126,16 +101,6 @@ justify-content: center;display: flex;"><img class="img-fluid" style="max-width:
                     </div>
                 </div>
             </div>
-			
-			<div style="margin: auto ;"><div style="margin: 0 auto; width:100px;display: flex;align-items: center;vertical-align: center;">
-                <div style="display: flex;margin: auto;"><div style="flex: 5%; padding: 5px;">
-                    <a href="https://github.com/Buddhathe18th"><img style="height:40px" src="assets/img/github.png"></a>
-                </div>
-                <div style="flex: 5%; padding: 5px;">
-                    <a href="https://www.linkedin.com/in/alex-zhu-389058185/"><img style="height:40px" src="assets/img/LinkedIn.png"></a>
-                </div></div>
-                
-            </div></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
