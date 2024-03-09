@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>ICS4U0 - Portfolio</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+  <div class="container px-4 px-lg-5">
+    <a class="navbar-brand" href="index.html">Alex Zhu</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+      Menu
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+      <ul class="navbar-nav ms-auto py-4 py-lg-0">
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"></a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="OOP.html">OOP</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Arrays and Sorting
+          </a>
+          <!-- Here's the magic. Add the .animate and .slideIn classes to your .dropdown-menu and you're all set! -->
+          <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="Arrays.html">Arrays</a>
+            <a class="dropdown-item" href="ArrayList.html">Arraylist</a>
+            <a class="dropdown-item" href="Sorting.html">Sorting</a>
+          </div>
+        </li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Recursion.html">Recursion</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ISP.html">ISP</a></li>
+        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Bibliography.html">Bibliography</a></li>
+
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('assets/img/sortingBackGround.jpg')">
+  <div class="container position-relative px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="post-heading">
+          <h1>Searching and Sorting</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- Post Content-->
+<article class="mb-4">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <p>Consider a scenario where you have an array of scores, and you want to see who scores the highest score. The scores are not sorted, and you need to sort the array. How would you do this and which strategy would you use?
+        </p>
+        <p>
+          Sorting and searching is an important section of computer science, dedicated to finding the most <span class="bold">efficient
+            and optimal algorithm</span> for sorting. The efficiency of an algorithm is based on its <span class="bold">time
+            complexity</span>, which is the number of calculations that are needed to make.
+        </p>
+
+        <h2 class="section-heading">Time Complexity</h2>
+        <p>
+          Time complexity is written with <span class="bold">big O notation</span>, written as <i>O(time complexity)</i>. 
+          Now, how do we actually calculate it? The value in the big O notation is the
+          <span class="bold">projected speed the algorithm to sort a very very large
+            number of entries</span>. For example, the most simple searching algorithm, <span class="bold">sequential
+          search</span>, runs by checking each element, and seeing if it is the one we are looking 
+          for. If the length of the array is <i>n</i>, we see on average it will take <i>n/2 </i>operations 
+          to find the value we want. Then would the time complexity be <i>O(n/2)</i>? Actually, with 
+          a very large <i>n</i>, the 2 will have a very small significance, so its time complexity 
+          will actually be <i>O(n)</i>.
+        </p>
+        <p>
+          Another common searching algorithm is <span class="bold">binary search</span>, which uses the <span class="bold">divide and
+          conquer</span> method, which works by breaking the problem into smaller bits and handling them individually. 
+          Note this algorithm only works with arrays that are already sorted. It finds the middle element 
+          of the array, and evaluates whether the wanted value is on the left or right of the middle element
+          . If it’s present on the left side, the algorithm recursively repeats with the left side of the 
+          array as the whole array, finding the middle point and evaluating again. This algorithm has time 
+          complexity <i>O(log n)</i> because we divide the array over and over again by 2. Other common time
+          complexities are <i>O(n<sup>2</sup>), O(log n), O(n log n)</i> and many others.
+        </p>
+
+        <h2 class="section-heading">Sorts</h2>
+        <p>
+          Sorting is the <span class="bold">process of ordering the contents of an array in a specific pattern</span>, most
+          commonly in decreasing or increasing order. The most common time complexities are <i>n<sup>2</sup> and
+          n log n</i>. Now I'll explain a few of the most common sorting algorithms.
+
+        </p>
+
+        <h4 class="lists">Selection Sort</h4>
+        <p>
+          In an array of length <i>n</i>, find the largest element, and swap it with the last element in the array.
+          Then recursively call <i>Selection sort</i> on the subarray from 0 to the second last element, repeating the
+          swapping process until the subarray has only length 1. The end product is the sorted array in increasing
+          order. This algorithm has time complexity <i>O(n<sup>2</sup>)</i> for both its average, worst and best case.
+        </p>
+
+        <h4 class="lists">Insertion Sort</h4>
+        <p>
+          Again, this algorithm relies on recursion. The idea is that assume the elements from index 0 to <i>k</i> of
+          the array are sorted, and we take the element at index <i>k+1</i> and we want to insert it at the correct index.
+          We iterate through the first <i>k+1</i> elements and see where element <i>k+1</i> fits in and insert it there. Then we call
+          Insertion Sort on the elements from 0 to <i>k+1</i> and this process repeats until the entire array is sorted. This has
+          average time complexity <i>O(n<sup>2</sup>)</i>, best case has <i>n-1</i> comparisons and the worst case is
+          <i>n(n-1)/2</i> operations.
+
+        </p>
+        <h4 class="lists">Merge Sort</h4>
+        <p>
+          Take the original array, and split it in half again and again until the original array is made up of many little arrays of length 1.
+          Then, we reverse the splitting process, merging together two subarrays so that they are sorted.
+          Continue merging all the subarrays until the original array is pierced back together and is now in the sorted
+          order. The time complexity for all cases is <i>O(n log n)</i>
+
+        </p>
+        <h4 class="lists">Quick Sort</h4>
+        <p>
+          Choose an element as a <span class="bold">pivot</span>, and compare it with all other elements. All the elements that
+          are smaller are moved to the left of the pivot and all elements greater are moved to the right.
+          Then, recursively call quick sort on the two sides of the pivot and when a subarray has length 1,
+          it is considered sorted. When the recursion finishes, the array should be sorted. This has time
+          complexity <i>O(n log n)</i> but may be slow if the pivot doesn’t split the array in half.
+        </p>
+
+        <h2 class="section-heading">Example</h2>
+        <p>Here's an in-depth demonstration of quick sort. It also contains more detailed explaination of how the algorithm works</p>
+        <iframe style="min-width:100%" src="https://drive.google.com/file/d/1ELd9h9AXkRcDlr57yf29iX8xMjLUWjZQ/preview" width="640" height="480" allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+</article>
+<!-- Footer-->
+<footer class="border-top">
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <div class="small text-center text-muted fst-italic">Copyright &copy; Alex Zhu 2023</div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>

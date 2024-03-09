@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>ICS4U0 - Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Alex Zhu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"></a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="OOP.html">OOP</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Arrays and Sorting
+                            </a>
+                            <!-- Here's the magic. Add the .animate and .slideIn classes to your .dropdown-menu and you're all set! -->
+                            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="Arrays.html">Arrays</a>
+                                <a class="dropdown-item" href="ArrayList.html">Arraylist</a>
+                                <a class="dropdown-item" href="Sorting.html">Sorting</a>
+                            </div>
+                        </li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Recursion.html">Recursion</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="ISP.html">ISP</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="Bibliography.html">Bibliography</a></li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/OOPImg/OOPBackground.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Object Orientated Programming (OOP)</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-11 col-lg10 col-xl-9">
+                        <p><span class="bold">Object-orientated programming</span>, also known as OOP, was a structure of programming first coined in 1967. OOP makes use of predefined blocks of code, known as <span class="bold">objects</span> and <span class="bold">classes</span>, to organize code. Before the use of OOP, procedural programming was used, where each line of code was run set-by-step.
+
+                        <h2 class="section-heading">What is an object?</h2>
+                        <p>An object in real life is a thing with an <span class="bold">identity</span>, a <span class="bold">state</span>, and <span class="bold">behaviours</span>.
+                        <p>For example, the car below would have an identity of <span class="bold">Mr. Smith’s car</span>. It’s state may include <span class="bold">blue, sedan and 1 year old</span>. Some behaviours it may have are <span class="bold">drive, park, filling up the gas, and reverse</span>.
+                        <img class="img-fluid" src="assets/img/OOPImg/blueCar.jpg" alt="..." />
+                        <p>Similar to an object in OOP, the identity is how each separate object is identified. Their state is made up of variables containing the data. Their behaviours are composed of methods that allow the object to perform certain actions and tasks.</p>
+
+                        <h2 class="section-heading">Object vs Class</h2>
+                        <p>What's the difference between an object and a class? The class is the template from which the object is built. For example, a class could be a car and Mr. Smith’s car would be an object. This is because it is built off of the template of a car, but has its own attributes and things it could do. In addition, many other different cars may all be created from the same template, the car.</p>
+
+                        <h2 class="section-heading">Characteristics of an Object</h2>
+                        <p>As mentioned already, an object is made up of three main parts, its name, its attributes, and its behaviours. The identifier would be the name of the object when you want to refer to it. The attributes are variables where the data contained represents the attributes of the object. All of its behaviours are methods that act out and execute the different actions of the object.</p>
+                        <p><span class="bold">Constructors</span> are a special part of every class, which is a method to create a new object from the class. The constructor must have the same name as the class and may have parameters passed in that are stored as part of the object’s attributes. A class may also have multiple constructors, but all still make the same type of object. </p>
+                        <p>All attributes and methods are <span class="bold">encapsulated</span> with another modifier which is either <span class="bold">public</span> or <span class="bold">private</span>. Public means that a variable or method can be used both <span class="bold">inside and outside the class</span>. Private means that a variable or method can only be accessed from <span class="bold">inside the class</span>. Having private attributes or methods prevents attributes or methods from being used incorrectly. To access these attributes or methods, they must be passed through a <span class="bold">public method</span>, such as <span class="bold">get and set methods</span>, which can be error trapped to stop incorrect values.</p>
+                        <p>In addition to public and private, methods and attributes can also have another modifier called <span class="bold">static</span>. If something is static, it can be <span class="bold">used without creating a new object</span>. Ones that are not static can only be accessed when a new object is created.</p>
+
+                        <h2 class="section-heading">How to represent classes?</h2>
+                        <p>Each class could get very elaborate, with lots of different attributes and methods, making it hard to organize. This is where the unified modelling language, or UML, comes in. UML is a way of easily and clearly showing the structure of a class. </p>
+                        <img class="img-fluid" src="assets/img/OOPImg/UML.png" alt="UML diagram structure" />
+                        <p>The first rectangle is for the name of the class. The second rectangle is for every attribute, listed with their name, then their data type. In the last rectangle, the methods are listed out, with their name, followed by their parameters with the parameter type, then followed by the return type. In front of the variables and methods are a plus or a minibus, where plus means it’s public and minus means it’s private.</p>
+
+                        <h2 class="section-heading">Inheritance</h2>
+                        <p>Another unique aspect of classes is <span class="bold">inheritance</span>. In real life, inheritance works when a child inherits its parent’s attributes. In OOP, inheritance is between classes, where the subclass or <span class="bold">child class can inherit attributes and methods from its parent class</span>. Unlike real life, in java, each class can only extend from one superclass, but a superclass can have many subclasses. The relationship between the subclass and superclass is an <span class="bold">Is-A relationship</span>. This is because the subclass is-a version of the parent class. On the other hand, attributes of a class are considered to have a <span class="bold">Has-A relationship</span>. This is because the class has the attribute.</p>
+                        <p>A subclass will inherit all public methods from its superclass, but its private methods are not callable from the subclasses. Similarly, with attributes, public attributes can be accessed in the subclass but the private attributes must be accessed from the get methods. When calling the superclass constructor, the keyword <span class="bold">super</span> is used. This must be the first line of the subclass constructor to call the superclass constructor, and the constructor it calls is dependent on the parameter passed to it.</p>
+
+                        <p>For example, if we had a class for cars, it may include attributes such as top speed, colour, model and age. Methods may include filling up gas, driving forward and parking.</p>
+                        <pre class="code">public class car{
+    private double topSpeed;
+    private String Colour;
+    private String model;
+    private int age;
+
+    public car(){
+        //constructor
+    }
+
+    public void fillingGas(double gas) {
+        //code
+    }
+    public void driving(double distance) {
+        //code
+    }
+    public void parking() {
+        //code
+    }
+}</pre>
+                        <p>Then we can have a subclass for pickup trucks. The attributes contain top speed, colour, model and age, which are all from the superclass, but it also has the attribute, bed size, which is unique to the pickup truck. The methods other than the ones from the superclass also have another method for towing.</p>
+                        <pre class="code">public class pickup extends car{
+    //new attribute
+    private double bedSize;
+
+    public pickup(){
+        //calling superclass constructor
+        super();
+        //rest of the constructor
+    }
+
+    //three methods from the superclass
+    public void fillingGas(double gas) {
+        super.fillingGas(gas);
+    }
+    public void driving(double distance) {
+        super.driving(distance);
+    }
+    public void parking() {
+        super.parking();
+    }
+
+    //new method
+    public void towing(double weight) {
+    	//code
+    }
+}</pre>
+
+                        <p>A subclass will inherit all public methods from its superclass, but its private methods are not callable from the subclasses. Similarly, with attributes, public attributes can be accessed in the subclass but the private attributes must be accessed from the get methods. When calling the superclass constructor, the keyword <span class="bold">super</span> is used. This must be the first line of the subclass constructor to call the superclass constructor, and the constructor it calls is dependent on the parameter passed to it.</p>
+                        <p>
+                            If we have a method that is present in the superclass and subclass,
+                            the subclass method will <span class="bold">override</span> the superclass method. To call the
+                            superclass method, the subclass object has to use <i>super.method()</i>.
+                        </p>
+
+                        <h2 class="section-heading">Polymorphism</h2>
+                        <p>
+                            <span class="bold">Polymorphism</span> means many forms. The concept is how and which methods are called with <span class="bold">overridden
+                            methods</span>.
+                            With superclass objects, you can initialize it as a subclass. This is because all subclasses IS-A superclass
+                            object. For example, we have a class <i>Animal</i>, a subclass <i>Bird</i> extends
+                            <i>Animal</i> and another subclass <i>Pigeon</i> that
+                            extends <i>Bird</i>. When we initialize an <i>Animal</i> object as a <i>Bird</i>, it can only use
+                            <i>Animal</i> methods and attributes,
+                            but any method call to an <i>Animal</i> method that is overridden by the <i>Bird</i> class will use the implementation of
+                            the method in the <i>Bird</i> class. This acts the same way with an <i>Animal</i> class with
+                            <i>Pigeon</i> and <i>Bird</i> with <i>Pigeon</i>.
+                        </p>
+                        <h2 class="section-heading">Abstract classes and Interfaces</h2>
+                        <p>
+                            <span class="bold">Abstract classes</span> are classes that may have <span class="bold">abstract methods</span>, which are methods
+                            that are not implemented, but not all have to be abstract. Abstract classes and
+                            abstract methods contain the word <i>abstract</i> in its header. Abstract classes <span class="bold">cannot
+                            be instantiated</span> but other classes can inherit from the abstract class. What this
+                            allows us to do is have a very broad and abstract frame of a class. This allows us
+                            to create a definition of what that class should do and what children classes should share.
+                        </p>
+                        <p>
+                            <span class="bold">Interfaces</span> are similar to abstract classes, as they have abstract methods too,
+                            but different from abstract classes, <span class="bold">all methods are abstract</span>, and
+                            <span class="bold">cannot have any
+                                fields or constructors</span>. The methods of an interface do not have to be stated to be
+                            <i>abstract</i> because they all have to be abstract. Interfaces <span class="bold">cannot be
+                            instantiated</span>, but a benefit
+                            is that classes can implement multiple interfaces.
+                        </p>
+
+
+                        <h2 class="section-heading">Example</h2>
+                        <p>
+                            For an assignment, we made a class of a <i>Space Collector</i>, that has attributes for its 
+                            location as a coordinate, the amount of battery left, its name and also the speed at 
+                            its flying. It has the set-and-get methods, but also methods such as charging, flying to 
+                            a certain location and speeding up.
+                        </p>
+                        <img class="img-fluid" src="assets/img/OOPImg/SpaceDrone.png"/>
+                        <span class="caption text-muted">A code snippet from the flyTo() method in the Space Drone class</span>
+                        <p>
+                            Then we made two subclasses, <i>Ore Extraction</i> and <i>Space Junk Collector</i>. The <i>Ore
+                            Extraction</i> has extra 
+                            attributes for how full the storage is and 
+                            what the status of the drill is and the status of the storage. It also has extra methods for mining asteroids and depositing the ore.
+                        </p>
+                        <img class="img-fluid" src="assets/img/OOPImg/OreExtraction.png"/>
+                        <span class="caption text-muted">A code snippet of mineAsteroid() method in the Ore Extraction class</span>
+                        <p>
+                            The other subclass, <i>Space Junk Collector</i>, has extra attributes for storage, 
+                            arm status and storage capacity. It has more methods such as collecting junk, depositing junk and also compressing junk.
+                        </p>
+                        <img class="img-fluid" src="assets/img/OOPImg/SpaceJunk.png"/>
+                        <span class="caption text-muted">A code snippet of the collectJunk() and compressJunk() methods in the Space Junk Collector class</span>
+                        <p>The full code is present in the resources tab.</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Alex Zhu 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
