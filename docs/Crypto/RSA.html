@@ -95,6 +95,8 @@
 
 
                         <h2 class="section-heading">Prerequisite math</h2>
+                        <p> </p>
+                        <h3 class="post-heading">Factoring</h3>
                         <p>The basis of most cryptosystems are what's known as a <span class="bold">trapdoor function</span>. These are specific operations that can be easily computed in the forwards direction, but computationally expensive to reverse. RSA uses the difficulty of factoring large numbers as its trapdoor function.</p> 
                         <p>The most simple and common form of factoring any given number uses a prime-finding algorithm called <span class="bold">The Sieve of Eratosthenes</span>. The premise of this algorithm is that if a number \(n\) is not divisible by a prime \(p\), then \(kp \nmid n\) for all \(k\in \mathbb{N}\) </p>
 
@@ -122,12 +124,39 @@ def sieve(n,factor):
     return factor</pre>
 
                         <p>A simple implementation of this algorithm is above, and as shown, it is recursive in finding a number's smallest factor, then factoring the remaining number will suffice. In addition, it only searches up to \(\sqrt{n}\) for maximum efficiency, and the algorithm returns when the given number is a prime.</p>
+                        <p>When running this algorithm on small numbers, we see that if the numbers are similar size, the number of iterations are about the same. Now, let's try some bigger numbers. Let's try to factor \(91\)</p>
+                        <p>We start at \(2\) and we check that \(2,3,5\) are not prime factors. Then we check \(7\) and notice that it does indeed divide \(91\). Then, our quotient is now \(13\), and assuming we do not know that this is a prime, we start at \(2\) and go until \(3\) to know that \(13\) is a prime. In total, this required \(6\) iterations.</p>
+                        <p>Now, lets try to factor \(128\). We start by realizing that \(128\) is divisible by \(2\) so we divide to result in \(64\). Then, we repeat this process again 6 times to get that \(128=2^{7}\). In total, this used 7 iterations.</p>
+
+                        <p>What we notice is that this algorithm is much more efficient in factoring numbers with a lot of small prime factors, opposed to a few large prime factors. This is a key in RSA, since RSA will have a public key that is a product of two large primes, which with this algorithm, is computationally exhaustive to factor.</p>
+
+                        <p></p>
+                        <h3 class="post-heading">Fermat's Little Theorom and Euler's Theorom</h3>
+
+                        <p>In most forms of cryptography, math will be operated under a modulo, meaning all calculations will only be working with a number's remainder when divided by the modulo \(n\). For example, \(2+2=4\) but \(2+2\equiv 1 \mod(3)\) since the remainder of \(4\) when divided by \(3\) is \(1\). Now, an important few theoroms are <span class="bold">Fermat's Little Theorom and Euler's Theorom</span>. These two theoroms are the basis of solving RSA and its prerequisites</p>
+
+                        <p><span class="bold">Fermat's Little Theorom</span></p>
+                        <p> Let\(p\) be a prime, then for any integer \(a\), $$a^{p}\equiv a \mod (p)$$  </p>
+
+                        <p>To prove this, let us use induction. Let \(p\) be a prime, and we want to prove for any integers \(a\) that \(a^{p}\equiv a \mod (p)\). To prove for all integers, we will split the set of integers into non-negative integers and negative integers.</p>
+                        <p>First, we will prove this for non-negative integers. <br>Base case: \(a=0\): \(0^{p}\equiv 0 \mod (p)\)<br>Induction hypothesis: Let the statement be true for some positive integer \(a\). <br>Then \((a+1)^{p}\equiv \sum_{k=0}^{p}{p \choose k}\cdot a^{k}\)<br><br>Since \({p \choose k}\) for \(k\neq p\) has a multiple of \(p\) in the numerator, but not the denominator, this will always be divisible by \(p\). <br><br>So, \(\sum_{k=0}^{p}{p \choose k}\cdot a^{k} \equiv a^{p}+a^{0} \equiv a+1 \mod(p)\)</p>
+
+                        <p>For any negative \(a\), since this equation is operated under modulo \(p\), \(a^{p}\equiv (a+kp)^{p}\) for any \(k \in \mathbb{N}\) such that \(a+kp\ge0\). Since we have already proved this for all non-negative integers, it must be true for the negative integers too.</p>
                         
+                        <p><span class="bold">Euler's Theorom</span></p>
+                        <p> Let \(n\) be a positive integer, then for any positive integer \(a\) such that \(\gcd(a,n)=1\), then $$a^{\phi (n)}\equiv 1 \mod (n)$$ where \(\phi (n)\) is equal to the number of positive integers \(k\) such that \(1\le k \le n, \gcd(n,k)=1\) </p>
 
+                        <p>The proof of this is much more complicated compared to Fermat's Little Theorom, and far beyond the scope of this page, so its proof will be left as an exercise to the reader :D. One note is that \(\phi (p)=p-1\) for any prime \(p\). This shows how Euler's Theorom is a generalization of Fermat's Little Theorom. We also need to know that \(\phi (p\cdot q)=(p-1)\cdot (q-1)\) for primes \(p,q\)</p>
 
+                        <h2 class="section-heading">RSA algorithm</h2>
 
+                        <p>Imagine Alice was to recieve a message from Bob in the form of a positive integer, \(f\). To encode this, Alice finds two large primes, \(p,q\) and multiplies them into \(n\), also known as the public key.  She also chooses another number \(e\), which is generally chosen to be \(65537\). She takes \(n\) and \(e\) and distributes it to Bob, and any attackers who are trying to intercept this. Then Bob will take the plaintext \(f\), raise it to the power of \(e\), and then take the modulo \(n\). This will result in the ciphertext \(c\). Bob then sends this back to Alice. The equation of what just happened is $$c\equiv f^{e} \mod (n)$$</p>
 
-                        
+                        <p>When Alice recieves this message, she can find the modular inverse of \(e\) in modulo \(\phi (n)\), and calls this \(d\) (We'll explain this later) and takes \(c\) to the power of \(d\) modulo \(n\). Miraculously, Alice is left with the value of \(f\).</p>
+
+                        <p>Before we cover why that worked, and why it is secure, let's first try this out. Pretend you are Alice, and I am Bob. You generated two primes \(11,17\) and found the public key \(n=187\), and distributed that and \(e=3\) to me (For simplicity's sake, we aren't using \(e=65537\)). Remember, I don't know the two primes, and we are assuming I don't have the capabilities to factor it either. I now have a number \(f\), and I have sent back \(f^{3} \mod (187)\), which is equal to \(70\). Now, you will find \(d\), which is the modular inverse of \(e\) in modulo \(\phi (n)\) (If you have python, typing <span class="code">pow(e,-1,n)</span> will return the mod inverse). Taking the power of \(c\) to the power of \(d\) modulo \(n\) returns .... 93!!</p>
+
+                        <p>How did that happen? Well, if we run through the steps one by one, we will see why this happens. We know that when Bob encrypted the plaintext \(f\) into \(c\), we have \(c\equiv f^{e} \mod (n)\). We know that \(f^{\phi (n)+1}\equiv f \mod (n)\) so we want to find a value \(d\) such that \(c^{d}\equiv f \mod (n)\Longrightarrow f^{ed}\equiv f \mod (n)\). So we want to find a value \(d\) such that \(ed\equiv 1 \mod (\phi n)\) since each time \(f\) is raised to the power of \(\phi (n)\) we return back to \(f\). This is why we found \(d\) as the modular inverse of \(e \mod (\phi (n))\). Therefore, \(c^{d}\equiv f^{ed} \equiv f^{k\phi (n)+1}\equiv 1\cdot f \equiv f \mod (n)\)<p>
 
                         <p>Imagine you have to store the grades of a class of 10 students. If you stored them in 10 double variables, how would you organize them? No worries, it's very simple with the help of <span class="bold">arrays</span>! Arrays are a class that is made of <span class="bold">consecutive memory locations that hold the same data type</span>. They are made of individual blocks called <span class="bold">elements</span>. Each element is not treated as its variable but as a part of the array. To access the elements, use the array’s name and the element’s index in the array. Arrays cannot have their size changed after being initialized.</p>
 
