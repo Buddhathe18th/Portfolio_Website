@@ -158,86 +158,15 @@ def sieve(n,factor):
 
                         <p>How did that happen? Well, if we run through the steps one by one, we will see why this happens. We know that when Bob encrypted the plaintext \(f\) into \(c\), we have \(c\equiv f^{e} \mod (n)\). We know that \(f^{\phi (n)+1}\equiv f \mod (n)\) so we want to find a value \(d\) such that \(c^{d}\equiv f \mod (n)\Longrightarrow f^{ed}\equiv f \mod (n)\). So we want to find a value \(d\) such that \(ed\equiv 1 \mod (\phi n)\) since each time \(f\) is raised to the power of \(\phi (n)\) we return back to \(f\). This is why we found \(d\) as the modular inverse of \(e \mod (\phi (n))\). Therefore, \(c^{d}\equiv f^{ed} \equiv f^{k\phi (n)+1}\equiv 1\cdot f \equiv f \mod (n)\)<p>
 
-                        <p>Imagine you have to store the grades of a class of 10 students. If you stored them in 10 double variables, how would you organize them? No worries, it's very simple with the help of <span class="bold">arrays</span>! Arrays are a class that is made of <span class="bold">consecutive memory locations that hold the same data type</span>. They are made of individual blocks called <span class="bold">elements</span>. Each element is not treated as its variable but as a part of the array. To access the elements, use the array’s name and the element’s index in the array. Arrays cannot have their size changed after being initialized.</p>
 
-                        <h2 class="section-heading">How to make an array</h2>
-                        <p>Arrays are objects so like any other object, they are initially set to null and must be declared its type. If the array holds elements of type <i>Type</i> then the array object is type <i>Type[]</i>.</p>
-                        <pre class="code">Type[] arrName = new Type[length];</pre>
-                        <p>This statement creates an array called arrName that holds a length number of elements of type <i>Type</i>. If the length is left empty, then the array will be of length 0, also known as an <span class="bold">empty array</span>. If the elements are not given values, they will have their default value, so ints will be initialized as 0, Strings as null etc.</p>
-                        <p>Arrays can also be initialized with an <span class="bold">array literal</span>. For example, in the code snippet below, we see the scores array of type double[] is being initialized with an array literal containing values 50.0, 60.5 and 99.9.</p>
-                        <pre class="code">double[] scores = {50.0, 60.5, 99.9};</pre>
+                        <p>Generally, to be cryptographically secure, the primes must be around 1024 bits to 2048 bits long, so the public key will be around 2048 bits to 4096 bits. As covered already, the public exponent is generally 65537.</p>
+                        <h2 class="section-heading">Common attacks</h2>
 
-                        <h2 class="section-heading">Indexes</h2>
-                        <p>Indexes are the positions in the array. <span class="bold">Indices start from 0</span> so the first element in the array arr is referred to as arr[0] and the nth element is referred to as arr[n-1]. The index can only be from <span class="bold">0 to the array length minus 1</span>. To get the length of the array, use <span class="bold">arrName.length</span>. Note that length is an attribute, not a method.</p>
-                        <p>Another way to traverse an array is the <span class="bold">for-each loop</span>. In a for-each loop, instead of the index that we increment, we look at each element in the array. The loop breaks when there are no more elements to look at in the array. This works exactly the same as a for loop, but this is easier to write.</p>
-                        <pre class="code">
-double[] scores={10.4, 30.3,5018.7};
-//This does the same thing as
-for (int i = 0; i &lt; scores.length;i++){
-    System.out.println(scores[i]);
-}
+                        <h3 class="post-heading">Insecure random number generators</h3>
 
-//This piece of code
-for (double score:scores){
-    System.out.println(score);
-}</pre>
+                        <p>When creating the public key for RSA, an insecure prime generator can easily comprimise the security of RSA. Imagine when generating your primes, you used a specific random prime generator, which is not quite random, and would cycle the prime it generated. If someone was to use the same generator and figured this out, they could easily test which primes were used. This is not only a security issue if they have the exact numbers, but even a higher probability of a specific number of type of number will impact the security and make it easier to break. For a demonstration of of an attack around this, check out my CTF writeup oh github, where I demonstrated this attack on a problem that I made :D. <a href="https://github.com/Buddhathe18th/CTFProblemsAndWriteups/blob/main/Common%20Faults/Common%20Faults.md">Link here</a></p>
 
-                        <h2 class="section-heading">Why use Arrays?</h2>
-                        <p>Imagine we have to save 100 scores from some students’ tests. Without arrays, we use the code on the left. It has 100 lines of just variables! On the right side, we use arrays of length 100 to store the scores of type double.</p>
-                        <div style="display: table;width:100%;" >
-                            <span class="col-5" style="display: table-cell; padding:1%">
-                                <pre class="code">
-double score1 = 50.0;
-double score2 = 25.8;
-double score3 = 95.2;
-
-...//The rest of the 100 variables
-
-double score100 = 89.22;
-                                </pre>
-                            </span>
-
-                            <span class="col-5" style="display: table-cell;padding:1%">
-                                <pre class="code">
-double[] scores = new double[100];
-for (double score:scores)
-{
-    //input a score
-}
-
-
-                                </pre>
-                            </span>
-                        </div>
-
-                        <p>This is just with 100 students. Throughout the year, students have many tests, quizzes and assignments. If you had to put them all into individual variables, just imagine how long your program would be!
-
-                        <h2 class="section-heading">2-d Arrays</h2>
-                        <p>Two-dimensional arrays are <span class="bold">arrays of arrays</span>. Each element of the big array is another array holding more elements. They are considered two-dimensional because each element is defined by two indexes, one for which the index is in the big array and another for the index of the element in that element array. They are used to represent tables, matrices and planes.</p>
-                        <p>This means if we had a 2-d array <i>arr</i>, then <i>arr[y]</i> is a one-dimensional array. <i>arr.length</i> is the length of the 2-d array, which is the number of rows it has. <i>arr[k].length</i> is the length of the row on the <i>kth</i> index. Similar to one-dimensional arrays, two-dimentional arrays can be initialized with the length or with an array literal</p>
-                        <p>Two-dimensional arrays don’t have to be a rectangle! Ones that are not in a rectangular form are called <span class="bold">ragged arrays</span>. This means each <i>arr[k].length</i> may be different whereas rectangular ones all have the same <i>arr[k].length</i>.</p>
-                        <p>A way to imitate 2-d arrays with only 1-d arrays is by using <span class="bold">parallel arrays</span>. This essentially acts like taking out the 1-d arrays from the 2-d arrays and using them separately.</p>
-
-                        <h2 class="section-heading">Exception</h2>
-                        <p>The most common type of expectation that can occur with arrays <span class="bold">isArrayIndexOutOfBoundsException</span>. This occurs when the program is trying to get an element from the array, but the index isn’t in the array. For example, in the following code, we have an array with length 10, with all elements initialized. Then when we try to get the 5th element, we have no error, but when we try to get the 11 or -1 elements, it gives an <span class="bold">ArrayIndexOutOfBoundsException</span>.</p>
-
-                        <pre class="code">
-int[] nums = new int[10];
-for (int i = 0;i &lt; nums.length;i++)
-{
-    nums[i] = i;
-}
-
-num1 = num[4]; //No error occur
-num2 = num[10]; //ArrayIndexOutOfBoundsException because index > 9
-num3 = num[-1]; //ArrayIndexOutOfBoundsException because index < 0
-</pre>
-
-                        <h2 class="section-heading">Examples</h2>
-                        <p>Using arrays, we used parallel arrays to list out the stats of different forms of  transportation, and then calculate who has the best form of transportation. The forms of transportation we use are buses, taxis, planes, trains and ferries and the things we consider are speed, price, range, wait time and capacity. Then we used these factors and calculated the best transportation. Then we rewrote the code to use 2d arrays instead of parallel arrays.</p>
-                        <img class="img-fluid" src="../assets/img/arrayImg/twoD.png"/>
-                        <span class="caption text-muted">The user interface for listing out all methods of transportation</span>
-                        <p>To view the full code, go to the resources page</p>
+                        
 
 
 
