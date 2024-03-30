@@ -1,6 +1,6 @@
 # Alex Zhu - Portfolio
 
-All files are in the [files](./docs) diretory, including all HTML, JS and CSS files. The [assets](docs/assets) directory contains both the favicon and the images used in the webpage. 
+Journal and log of ICS4UO is under the [ICS4UO](./docs/ICS4UO) directory. The cryptography blog posts are under the [Crypto](./docs/Crypto) directory. All other files are in their respective directories.
 
 ## Copyright and License
 
