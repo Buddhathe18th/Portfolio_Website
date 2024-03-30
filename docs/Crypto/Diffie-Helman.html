@@ -87,15 +87,21 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <p>To the very careful readers, you might just be familiar with the name Diffie-Helman. These two were the two people that came up with the idea of RSA</p>
+                        <p>To the very careful readers, you might just be familiar with the name Diffie-Helman. These two were the two people that came up with the idea of RSA. The Diffie-Helman key exchange actually predated RSA, being one of the first models of public key and private key encryption.
 
-                        <p>Every single day, we use the internet to communicate and send information to people across the world. This could include a simple text asking what's for dinner, or it could be a highly confindential message sent between countries. All messages have an intended reciever, and when the message is intercepted, it could lead to a variety of troubles.</p>
-                        <p>Here comes in cryptography, the study and process of hiding or encoding information so only the intended reciever can read it. It can start off simple, with a simple "Replace each letter with the next letter in the alphabet", but these simple ciphers can be easily broken</p>
-                        
-                        <h2 class="section-heading">History</h2>
-                        <p>The idea of RSA was first published in 1976 by Whitfield Diffie and Martin Hellman, but since there was not a deep understading of the difficulty of factoring, they did not fully understand the potential of RSA </p>
-                        <p>Then, over the course of 1976, Ron Rivest, Adi Shamir, and Leonard Adleman from MIT developed the idea of facatoring as a one-way function, and published the final form of this cryptosystem, and is named after the first initial of their last names, as appeared on their paper.</p>
+                        <h2 class="section-heading">Prerequisite Math</h2>
 
+                        <p>Just like RSA, Diffie-Helman also is based on a trapdoor function. Instead of factoring large numbers, the trapdoor function is something known as the <span class="bold">Discrete Logarithm Problem</span>.</p>
+                        <p>Normally, if it was known that \(b^k=a\), its a simple operation of finding \(k=log_b(a)\). Yet, now we operate on a field G, with generator \(g\) (That means that if we take \(g^0,g^1, \dots g^n\) will result in all the values of the field G), and we know \(a=g^k\) then it is not that easy to find the value of \(k\). 
+                        </p>
+
+                        <p>For example, if we know \(5^x=3125\), we can take \(log_5\) both sides to find \(x=5\). Yet, if we konw \(5^x\equiv 14 \mod 17\). We see the two examples actually result the same numbers, but we are no longer able to find this in one step, and need to go through a variety of steps. The simpliest method, to try all values of \(x\) has time complexity of O(n) (If you want to know more about time complexity, check out the page about <a href="../ICS4UO/Sorting.html">sorting</a>, where I explain this more in depth), which for larger primes is incredibly slow. </p>
+
+                        <h2 class="section-heading">Diffie-Helman algorithm</h2>
+
+                        <p>Imagine Alice and Bob wanted to communicate through an insecure channel, was to recieve a message from Bob in the form of a positive integer, \(f\). To encode this, Alice finds two large primes, \(p,q\) and multiplies them into \(n\), also known as the public key.  She also chooses another number \(e\), which is generally chosen to be \(65537\). She takes \(n\) and \(e\) and distributes it to Bob, and any attackers who are trying to intercept this. Then Bob will take the plaintext \(f\), raise it to the power of \(e\), and then take the modulo \(n\). This will result in the ciphertext \(c\). Bob then sends this back to Alice. The equation of what just happened is $$c\equiv f^{e} \mod (n)$$</p>
+
+                        <p>When Alice recieves this message, she can find the modular inverse of \(e\) in modulo \(\phi (n)\), and calls this \(d\) (We'll explain this later) and takes \(c\) to the power of \(d\) modulo \(n\). Miraculously, Alice is left with the value of \(f\).</p>
 
                         <h2 class="section-heading">Prerequisite math</h2>
                         <p> </p>
