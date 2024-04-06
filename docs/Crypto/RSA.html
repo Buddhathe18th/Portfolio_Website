@@ -170,8 +170,16 @@ def sieve(n,factor):
 
                         <p>Another commonly used public exponent is \(e=3\), which produces a much faster encryption time, but does lead to vulnerabilities. If the same message was encrypted three times with public exponent \(e=3\), with not nessecarily the same public key, it is possible to find the plaintext. This sounds crazy, but lets give an example. </p>
 
+                        <p>Imagine I will send a message \(p\) to three people, Alice, Bob and Charlie, encrypted with plaintext \(n_1,n_2,n_3\) and public exponent \(e=3\). Now, you're in the middle and are eavesdropping on their communication and you know the three public keys are \(47897,22879,45649\) and the three ciphertexts are \(27863,6342,23120\). Now using the Chinese Remaindar Theorom, we will find the value of \begin{cases}
+                            p^3 \equiv 27863 \mod 47897\\
+                            p^3 \equiv 6342 \mod 22879\\
+                            p^3 \equiv 23120 \mod 45649
+                            \end{cases} $$\Longrightarrow p^3 \equiv 927715200768 \mod 50023793050487$$
+                        (I solved this with an online calculator, as an excersize to the reader, trying programing your own solver)</p>
 
-                        <p>I will distribute plaintext \(p\) with public key \(n_1,n_2,n_3\) with public exponent \(e=3\). Now we know the three ciphertexts \(c_1\equiv p^3 \mod n_1\), \(c_2\equiv p^3 \mod n_2\), \(c_3\equiv p^3 \mod n_3\). Using the Chinese Remaindar Theorom, we can find \(p^3 \mod c_1c_2c_3\). We know for a fact that \(p&#60n_1,p&#60n_2,p&#60n_3\) so multipling all three inequalities together gives \(p^3&#60c_1c_2c_3\). So when we find the value of \(p^3 \mod c_1c_2c_3\), this value should actually be less than the mod, so no modular operations have been done. So we can simply take the 3rd root of that value to find \(p\).</p>
+                        <p>What we see is that \(p&#60n_1,p&#60n_2,p&#60n_3\) since if its bigger than the mod, it destroys the original data. So then we know \(p^3&#60c_1c_2c_3\) (Don't worry if you don't get it yet, the next paragraph explains it a bit more in depth for the general numbers). We see that the mod of the result is in fact \(c_1c_2c_3\) which means that the mod didn't do anything. We can verify this by taking the cube root of the number, to get \(p=9753\), which in fact is the plaintext! You can verify this by encrypting it with the public keys to see that the numbers do match up.</p>
+
+                        <p>With a more general explaination, I will distribute plaintext \(p\) with public key \(n_1,n_2,n_3\) with public exponent \(e=3\). Now we know the three ciphertexts \(c_1\equiv p^3 \mod n_1\), \(c_2\equiv p^3 \mod n_2\), \(c_3\equiv p^3 \mod n_3\). Using the Chinese Remaindar Theorom, we can find \(p^3 \mod c_1c_2c_3\). We know for a fact that \(p&#60n_1,p&#60n_2,p&#60n_3\) so multipling all three inequalities together gives \(p^3&#60c_1c_2c_3\). So when we find the value of \(p^3 \mod c_1c_2c_3\), this value should actually be less than the mod, so no modular operations have been done. So we can simply take the 3rd root of that value to find \(p\).</p>
 
                     </div>
                 </div>
