@@ -183,8 +183,30 @@ def sieve(n,factor):
 
                         <p>Similarly, if our public exponent \(e=65537\), and we encoded a message 65537 times with different public keys, then we could, theoretically, find the value of \(p^{65537} \mod \prod _{i=1} ^{65537} c_i\) but this isn't much of an issue since its improbable that this would happen, and the numbers would be too large to easily compute it</p>
 
-                        
+                        <h3 class="post-heading">Stereotyped Messages</h3>
+                        <p>Imagine someone was using an ATM, and the ATM sent the pin of the user's card, encrypted with RSA, which you intercepted. You've used the same ATM before and know the message is in the form <p><span class="code">Success, the pin you entered was XXXX</span></p> where <span class=code>XXXX</span> is the pin of the user. You know <span style="overflow-wrap: break-word;">\(e\)=3, \(n\)=7144185426564033543405027422824014045435743089574765833336639950967744877069343295023552219069095467282177400401568838075299383358286378056365906844089427, \(c\)=41505875095270297131920382700158344913293087113705282849892487413878061654152195345625908</span>. How would we solve this? What we can do is assume that the four X's are empty bytes, then the plaintext would be <span style="overflow-wrap: break-word;">\(p_1\)=41505875095270297131920382700158344913293087113705282849892487413878061654152194520252416</span>. Then we can turn the plaintext into a polynomial \(P\left(x\right)=p_1+x\) under the mod of \(n\) where \(x\) is the PIN. Then we know \(P^3(x)-c \mod n\) should have a solution of \(x=p\). </p>
 
+                        <p>Since we know \(x\) is a four digit string, it isn't very large, so we can use sagemath to find small roots.</p>
+
+                        <pre class="code">def bytes_to_long(data):
+    return int(data.encode('hex'), 16)
+
+def long_to_bytes(data):
+    data = str(hex(long(data)))[2:-1]
+    return "".join([chr(int(data[i:i + 2], 16)) for i in range(0, len(data), 2)])
+    
+
+e=3
+N=7144185426564033543405027422824014045435743089574765833336639950967744877069343295023552219069095467282177400401568838075299383358286378056365906844089427L
+
+c = 1311492047081339606334317473678689450284454882529980382227794265864388531586651555270380747603553017090273911012028353948891116674540104136726567395500936L
+p_1 = 41505875095270297131920382700158344913293087113705282849892487413878061654152194520252416L
+P.<x> = PolynomialRing(Zmod(N), implementation='NTL')
+pol = (p_1 + x)^e - c
+roots = pol.small_roots(epsilon=1/30)
+print("Potential solutions:")
+for root in roots:
+    print(root)</pre>
                     </div>
                 </div>
             </div>
