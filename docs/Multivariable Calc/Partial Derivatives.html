@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Alex Zhu - My Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
+</script>
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Alex Zhu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ICS4UO Journey
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="ICS4UO/OOP.html">OOP</a>
+                                <a class="dropdown-item" href="ICS4UO/Arrays.html">Arrays</a>
+                                <a class="dropdown-item" href="ICS4UO/ArrayList.html">Arraylist</a>
+                                <a class="dropdown-item" href="ICS4UO/Sorting.html">Sorting</a>
+                                <a class="dropdown-item" href="ICS4UO/Recursion.html">Recursion</a>
+                                <a class="dropdown-item" href="ICS4UO/ISP.html">ISP</a>
+                                <a class="dropdown-item" href="ICS4UO/Bibliography.html">Bibliography</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cryptography
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="Crypto/RSA.html">RSA</a>
+                                <a class="dropdown-item" href="Crypto/Diffie-Helman.html">Diffie-Helman</a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/RSA_background.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Partial Derivatives</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>With single variable functions, we can take the derivative of the function in terms of \(x\). We commonly write this using <span class="bold">Leibniz Notation</span>, by writing \(\frac{df}{dx}\). This notation is actually quite intuitive, since it could be understand as the change in \(f\) due to an infinitesimally small change in \(x\), or quite literally the rate of change of \(f\) in respect to \(x\). </p>    
+                        <p>Now, with multivariable functions, how can we find a similar concept of derivatives? We can't simply find the change of \(f\) in terms of the input since there multiple inputs. Instead, we can find the <span class="bold">partial derivative</span>, which, as the name shows, "part" of the full derivative. Instead of finding the change of \(f\) in respect to all the inputs, we can find the change of \(f\) in respect to just a single input, by treating all other inputs as constants. We notate this with a \(\partial\), so the partial derivative of \(f\) in respect to \(x\) is notated as \(\frac{\partial f}{\partial x}\), or as \(f_x\)</p>
+                        <p>Let's try an example, given \(f\left(x\right) = x^2+2xy+3\sin y\), find the partial derivative of \(f\) in respect to \(x\), then in respect to \(y\). First, in respect to \(x\), for the \(x^2\) term, we can differentiate normally, for \(2x\). For the \(2xy\) term, treating \(y\) as a constant will result in a derivative of \(2y\). Finally, the last term of \(\sin y\) is just a constant, so its derivative is \(0\). So finally, \(\frac{\partial f}{\partial x}=2x+2y\). Similarly, in respect to \(y\), \(x\) will be treated as a constant. The \(x^2\) term is just a constant, so its derivative is \(0\). Then, the \(2xy\) term is differentiated to be \(2x\). The derivative of \(\sin y\) in respect to \(y\) is \(\cos y\). Therefore, \(\frac{\partial f}{\partial y}=2x+\cos y\).</p>
+
+                        <p>Now, we understand what a partial derivative algebraicly, but what does it actually do graphically? Well, just like when we found the algebraic definition, we know all inputs other than the one we are finding the partial derivative in respect to will be treated as a constant. Without loss of generality, let us find the partial derivative of \(f\) in respect to \(x\). Then what would happen if we took a plane along the xy-plane that passes through the origin, and found the curve of the graph on the plane? Its pretty obvious that the graph on that plane is \(x^2\), and we know its derivative is \(2x=2x+2\cdot 0\). We know \(y=0\), which fits the expression we found in the last part. What if we shifted this plane \(\pi\) unit in the positve y direction? Now, we know that \(y=\pi\), we know the curve on that plane should look like \(f\left(x\right) = x^2+2x\cdot \pi+3\sin \pi=x^2+2\pi x\). Looking at the graph of it, it does seem like this parabola. Knowing this, taking the derivative of that gives \(\frac{\mathrm{d} f}{\mathrm{d} x}=2x+2\pi\), which does fit the general formula of the partial derivative. So simply enough, the partial derivative of a function \(f\) in respect to variable \(x\) is simply the amount of change in \(f\) caused by a infinitesimally small change in \(x\) with no change in all other inputs.</p>
+
+                        <h3 class="section-heading">Rigorous Definition</h3>
+                        <p>Now that we know what a partial derivative is, and also how to find it, how do we rigourously define this? We already have a intuitive definition, but how can we make that more rigourous? Recall the definition of a regular derivative:$$\frac{\mathrm{d} f}{\mathrm{d} x}=\lim_{h \to 0} \frac{f\left(x+h\right)-f\left(x\right)}{h}$$ This makes intuitive sense, since its essentially the slope of the line with two points on the function that are infinitesimally close to each other. Now, can we replicate this definition for the partial derivative? Actually, yes we can. Just like in our intuitive definition, we can find the change in function, divided by the change by the variable we are changing. We can apply essentially the same definition, but with all other variables as constants. $$\frac{\partial f}{\partial x}=\lim_{h \to 0} \frac{f\left(x+h,y,z,...\right)-f\left(x,y,z,...\right)}{h}$$</p>
+
+                    </div> 
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Alex Zhu 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        
+    </body>
+</html>
