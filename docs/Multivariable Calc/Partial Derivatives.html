@@ -97,6 +97,10 @@
                         <h3 class="section-heading">Rigorous Definition</h3>
                         <p>Now that we know what a partial derivative is, and also how to find it, how do we rigourously define this? We already have a intuitive definition, but how can we make that more rigourous? Recall the definition of a regular derivative:$$\frac{\mathrm{d} f}{\mathrm{d} x}=\lim_{h \to 0} \frac{f\left(x+h\right)-f\left(x\right)}{h}$$ This makes intuitive sense, since its essentially the slope of the line with two points on the function that are infinitesimally close to each other. Now, can we replicate this definition for the partial derivative? Actually, yes we can. Just like in our intuitive definition, we can find the change in function, divided by the change by the variable we are changing. We can apply essentially the same definition, but with all other variables as constants. $$\frac{\partial f}{\partial x}=\lim_{h \to 0} \frac{f\left(x+h,y,z,...\right)-f\left(x,y,z,...\right)}{h}$$</p>
 
+                        <h3 class="section-heading">Higher Order Partial Derivatives</h3>
+                        <p>Just like the derivatives we did before, we can find higher order partial derivatives. Let's reuse the example from the previous section, with \(f\left(x\right) = x^2+2xy+3\sin y\). We already know the partial derivative of \(f\) in respect to \(x\),\(y\) are \(\frac{\partial f}{\partial x}=2x+2y\),\(\frac{\partial f}{\partial y}=2x+\cos y\), respectively. Now, we can find the second derivative with the same process. Since we have two inputs, we can choose any one of the two variables to take our first derivative in respect to, then we can chose another one out of the two to take the second partial in respect to. Therefore, we will have 4 seperate partial derivatives. </p>
+
+                        <p>Lets first take the partial derivative of \(f\) in respect to \(x\), then find it's partial derivative in respect to \(x\). Then we have \(\frac{\partial}{\partial x}\frac{\partial f}{\partial x}=2\)</p>
                     </div> 
                 </div>
             </div>
