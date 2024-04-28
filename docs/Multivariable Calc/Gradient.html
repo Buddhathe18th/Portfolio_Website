@@ -95,11 +95,27 @@
                             \frac{\partial f}{\partial x_1}\\
                             \dots \\
                             \frac{\partial f}{\partial x_n}\\
+                            \end{bmatrix}$$ </p> 
+                        
+                        <p>When the first component of this vector is positive, that means when we take a step in the positive \(x_1\) direction, the value of the function increases. Similarly, when the second component of this vector is positive, that means when we take a step in the positive \(x_2\) direction, the value of the function increases. So now we know that taking a step in the first quadrant of the \(x_1x_2\) plane will make the function increase, but which direction exactly?</p>
+                        <p>Let's say for \(g\left(x,y\right)=x^2+y\), this vector is equal to \(\begin{bmatrix}
+                            2x\\
+                            1\\
+                            \end{bmatrix}\).
+                        Then at the point \(\left(1,1\right)\), the vector is equal to \(\begin{bmatrix}
+                        2\\
+                        1\\
+                        \end{bmatrix}\) meaning a postive step in the x direction will have twice the increase compared to a step in the y direction, even though both components are positive. Therefore, the direction this vector is pointing as will be the direction to make the function grow the fastest. Try graphing this on Desmos and see the direction the vector points at.</p>
+                        <h3 class="section-heading">Rigorous Definitions</h3>
+                        <p>For any given function, this vector is called the <span class="bold">gradient</span> and is denoted by the symbol nabla, \(\nabla\). The gradient could be thought of as a operator that takes in a function, and returns a vector with the same amount of components as the input function's inputs. The gradient for a function \(f\) can be written as $$\nabla f = \begin{bmatrix}
                             \frac{\partial f}{\partial x_1}\\
                             \frac{\partial f}{\partial x_1}\\
                             \dots \\
                             \frac{\partial f}{\partial x_n}\\
-                            \end{bmatrix}$$ </p>
+                            \end{bmatrix}$$</p>
+                        <p>Since the gradient is the vector that points at the direction of steepest ascent, when the gradient evaluated at a point is equal to the zero vector, that means you are at either the local maxima or local minima. This is similar to thinking about turning points in a single variable function.</p>
+
+                        <p>Another unique property is that when the contour lines of a function is drawn in, the gradient will always be perpendicular to the lines. This is quite intuitive since the contour line shows the line where the value of the function is at a constant value, and moving perpendicular to it will bring you either at the steepest ascent or descent, similar to running straight up a hill versus walking along the hill. </p>
                     </div>  
                 </div>
             </div>
