@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <base href="../">
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Alex Zhu - My Portfolio</title>
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+        </script>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/mml-chtml.js">
+</script>
+
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="index.html">Alex Zhu</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4"></a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ICS4UO Journey
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="ICS4UO/OOP.html">OOP</a>
+                                <a class="dropdown-item" href="ICS4UO/Arrays.html">Arrays</a>
+                                <a class="dropdown-item" href="ICS4UO/ArrayList.html">Arraylist</a>
+                                <a class="dropdown-item" href="ICS4UO/Sorting.html">Sorting</a>
+                                <a class="dropdown-item" href="ICS4UO/Recursion.html">Recursion</a>
+                                <a class="dropdown-item" href="ICS4UO/ISP.html">ISP</a>
+                                <a class="dropdown-item" href="ICS4UO/Bibliography.html">Bibliography</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link px-lg-3 py-3 py-lg-4 dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Cryptography
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="navbarDropdown">
+
+                                <a class="dropdown-item" href="Crypto/RSA.html">RSA</a>
+                                <a class="dropdown-item" href="Crypto/Diffie-Helman.html">Diffie-Helman</a>
+                            </div>
+                        </li>
+                        
+                        
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url('assets/img/RSA_background.jpg')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>Directional Derivatives</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>We've covered already how to take the partial derivative of a multivariable function as how much the function increases for a step in the direction of the input. The question now is how can we find how taking a step in the \(\overrightarrow{v}\) direction will impact the value of the function. We'll call this the <span class="bold">directional derivative</span> of a function \(f\) with respect to a vector \(\overrightarrow{v}\). We denote this as \(\nabla _{\overrightarrow{v}}f\) or \(\frac{\partial f}{\partial \overrightarrow{v}}\)</p>
+
+                        <p>We know that if we take a very small step in the direction of the vector \(\begin{bmatrix}2\\1\end{bmatrix}\), the step in the x direction would still be twice the step in the y direction. Therefore, we must use proportions and the directional derivative would be \(2\cdot \frac{\partial f}{\partial x} + 1\cdot \frac{\partial f}{\partial x}\). The only issue is that what if we tried to find the directional derivative in the direction of vector \(\begin{bmatrix}4\\2\end{bmatrix}\)? We know that this vector is the same direction as the previous vector, but instead, the directional derivative is twice as large. Therefore, we must only use unit vectors. </p>
+
+                        <p>Now let's say we have a unit vector \(\overrightarrow{v}=\begin{bmatrix}v_1\\v_2\\\dots \\v_n\end{bmatrix}\). Then, if we want to find the directional derivative of a function \(f\) with inputs \(x_1,x_2,\dots,x_n\) in the direction of \(\overrightarrow{v}\), we know we want to find \(v_1\cdot \frac{\partial f}{\partial x_1}+v_2\cdot \frac{\partial f}{\partial x_2}+\dots+v_n\cdot \frac{\partial f}{\partial x_n}\). To those with a keen eye, you'll notice this looks a lot like the cross of product of two vectors, and we know one seems to be \(\overrightarrow{v}\). Then what's the second vector? It's the gradient of \(f\)! Therefore, the directional derivative of a function \(f\) with respect to vector \(\overrightarrow{v}\) is \(\nabla _{\overrightarrow{v}}f=\nabla f \cdot \overrightarrow{v}\)</p>
+                    </div>  
+                </div>
+            </div>
+        </article>
+        <!-- Footer-->
+        <footer class="border-top">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Alex Zhu 2023</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        
+    </body>
+</html>
