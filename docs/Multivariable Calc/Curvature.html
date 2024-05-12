@@ -105,8 +105,18 @@
 <br>
                         <p>Now, we want to find \(\frac{d\overrightarrow{T}}{dt}\) so we differentiate again, giving $$\frac{d\overrightarrow{T}}{dt}=\begin{bmatrix}\frac{\sin\left(t\right)\cos\left(t\right) \left(\cos\left(t\right) - 1\right)\left(\cos\left(t\right)^2 - \cos\left(t\right) - 1\right)}{{\sqrt{1 - 2 \cos\left(t\right) + 2 \cos^2\left(t\right) - \cos^4\left(t\right)}^3}}\\\frac{2\sin^4\left(\frac{t}{2}\right)\left(-2\cos\left(t\right)+\cos\left(2t\right)-1\right)}{{\sqrt{1 - 2 \cos\left(t\right) + 2 \cos^2\left(t\right) - \cos^4\left(t\right)}}^3}\end{bmatrix}=\begin{bmatrix}\frac{\frac{5\sqrt3}{32}}{\frac{7\sqrt{7}}{64}}\\\frac{-\frac{5}{16}}{\frac{7\sqrt{7}}{64}}\end{bmatrix}=\begin{bmatrix}\frac{10\sqrt{21}}{49}\\\frac{-20\sqrt7}{49}\end{bmatrix}$$</p>
 
-                        <h3 class="section-heading">Finding \(\frac{d\overrightarrow{T}}{dt}\)</h3>
+                        <p>$$\lVert\dfrac{d\overrightarrow{T}}{dt}\lVert=\sqrt{\left(\frac{10\sqrt{21}}{49}\right)^2+\left(\frac{-20\sqrt7}{49}\right)^2}=\frac{10}{7}$$ so the curvature \(\kappa=\frac{\lVert\frac{d\overrightarrow{T}}{dt}\lVert}{\lVert\frac{ds}{dt}\lVert}=\frac{\frac{10}{7}}{\frac{\sqrt7}{2}}=\frac{20\sqrt7}{49}\)</p>
 
+                        <p>We can verify this answer by graphing this curve along with this circle. </p>
+
+                        <h3 class="section-heading">Applications in higher dimensions</h3>
+
+                        <p>With more inputs, the function \(f\) would have a larger number of "dimensions" when graphed, but the curvature is calculated in the same way. This is because the curvature is a scalar value, equal to the radius of the circle that hugs the curve the best at that point. In higher dimensions, the circle may be in on any plane in that n-dimensioned space. This can be imagined with the following image. </p>
+
+                        <img class="img-fluid" src="assets\img\curvatureOfAHelix.png"/>
+                        <span class="caption text-muted">The curvature circle is slightly tilted, to best fit the 3d helix</span>
+
+                        <p>The formula provided will work in any amount of dimensions</p>
                     </div>  
                 </div>
             </div>
